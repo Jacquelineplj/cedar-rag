@@ -1,2 +1,2 @@
 Saved actual embedding inspection, four comparisons, k experiment, and answer inputs.
-results.csv audit columns are intentionally blank for student judgment.
+results-template.csv is blank for initial auditing; unchanged results retain completed judgments in results.csv.

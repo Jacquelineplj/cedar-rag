@@ -26,3 +26,9 @@ Added one instruction: address operation and access hours separately, explicitly
 | Whether 19:00 falls within permitted hours is not established | Neither supplied passage contains an access-hours schedule |
 
 The revision helped by explicitly acknowledging the missing access-hours evidence. It did not repair retrieval: Q1's selected set still has coverage 1/2, because A1 is absent. No unsupported access schedule or invented citation appears in the revised answer.
+
+## Sequential final pass
+
+After setup, Task 1, Task 2, and Task 3 were rerun in order, Q1 was generated again in fresh projectless chat `01a15a3e-af33-7c32-a143-d616c20438b5`. Its exact initial prompt, unchanged A2/T1 evidence, and original answer are saved under `evidence/final-pass/`. This original again omitted the missing access-hours statement. It correctly supported the no-solo-operation and training claims, but did not fully pass the audit.
+
+One additional instruction was applied once, with exactly the same passages, in fresh chat `01a15a3f-52a7-7262-b51d-695284b6a774`. The final answer supports the operating prohibition with A2, current-record and 12-month renewal requirements with T1, and explicitly identifies both the missing student-specific current record and missing permitted access hours. Each claim was checked against the supplied text; the final answer introduces no numerical hours, wavelength, or unsupported permission. The revision passes the answer-grounding check while retrieval remains partial (A1 absent).

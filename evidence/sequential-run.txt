@@ -1,0 +1,7 @@
+Setup completed first; see setup-confirmation.txt.
+Task 1 baseline and manual-score audit passed at 2026-10-20T16:55:45.648541+00:00.
+Q1 predicted and retrieved evidence: A1,A2. No answer generated in this stage.
+Task 2 embedding inspection and normalization/cosine checks passed at 2026-10-20T16:55:57.097367+00:00.
+Task 3 four-question comparison and k experiment completed at 2026-10-20T16:56:56.636745+00:00.
+Blank prompt-3 output preserved in results-template.csv; final evidence judgments filled in results.csv with Codex assistance at the user's request.
+Task 4 fresh answers generated and audited; Q1 original failure preserved, one instruction revision passed with unchanged evidence; Q4 passed at 2026-10-20T16:58:35.576605+00:00.

@@ -1,4 +1,4 @@
-"""Save actual runs and blank student audit columns; never synthesize scores."""
+"""Save actual runs, a blank audit template, and preserve valid completed judgments."""
 import contextlib
 import csv
 import io
@@ -44,8 +44,24 @@ def main():
             handoff += '\n\n'.join(f'[{c.id}] {c.text}' for c, _ in embedding)
             (evidence / f'{qid.lower()}-answer-input.txt').write_text(handoff + '\n')
     (evidence / 'retrieval-runs.txt').write_text(log.getvalue())
-    with (ROOT / 'results.csv').open('w', newline='') as handle:
-        writer = csv.DictWriter(handle, fieldnames=list(rows[0]))
+    fields = list(rows[0])
+    # Preserve the prompt-3 blank template separately from final submission judgments.
+    with (ROOT / 'results-template.csv').open('w', newline='') as handle:
+        writer = csv.DictWriter(handle, fieldnames=fields, lineterminator='\n')
+        writer.writeheader()
+        writer.writerows(rows)
+    results_path = ROOT / 'results.csv'
+    audit_fields = {'keyword_evidence_complete', 'embedding_evidence_complete', 'observation'}
+    if results_path.exists():
+        previous = list(csv.DictReader(results_path.open()))
+        raw_fields = [field for field in fields if field not in audit_fields]
+        if len(previous) == len(rows) and all(
+                all(old[field] == new[field] for field in raw_fields)
+                for old, new in zip(previous, rows)):
+            for old, new in zip(previous, rows):
+                new.update({field: old[field] for field in audit_fields})
+    with results_path.open('w', newline='') as handle:
+        writer = csv.DictWriter(handle, fieldnames=fields, lineterminator='\n')
         writer.writeheader()
         writer.writerows(rows)
     klog = io.StringIO()
@@ -58,7 +74,7 @@ def main():
     (evidence / 'k-experiment.txt').write_text(klog.getvalue())
     (evidence / 'run-data.json').write_text(json.dumps(records, indent=2) + '\n')
     print('Saved actual embedding inspection, four comparisons, k experiment, and answer inputs.')
-    print('results.csv audit columns are intentionally blank for student judgment.')
+    print('results-template.csv is blank for initial auditing; unchanged results retain completed judgments in results.csv.')
 
 if __name__ == '__main__':
     main()

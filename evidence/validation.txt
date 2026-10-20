@@ -11,3 +11,7 @@ Actual checks completed:
 - Fresh answer conversations used only selected passages and no tools.
 - Q1 original failure retained; one revised instruction rerun with same evidence.
 - Q4 abstention checked against supplied sources.
+- Sequential completion pass: setup model confirmation, Tasks 1-3 rerun, fresh Task 4 answers and one Q1 revision audited.
+- Final results.csv judgments populated; results-template.csv preserves the initial blank audit.
+- Full real-model rerun preserves completed judgments when raw retrieval results are unchanged.
+- Author saved as Jacqueline Pan; reflection body is 104 words and explicitly identifies Codex assistance.

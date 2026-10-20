@@ -1,5 +1,5 @@
 question_id,keyword_top_ids,keyword_scores,embedding_top_ids,embedding_scores,required_ids,keyword_evidence_complete,embedding_evidence_complete,observation
-Q1,A1;A2,3;2,A2;T1,0.68644559;0.58195281,A1;A2,,,
-Q2,A2;B1,2;1,A2;T1,0.58519334;0.43476063,A2,,,
-Q3,T1;A2,2;1,T1;B1,0.74202740;0.47119522,T1,,,
-Q4,A2;B1,1;1,T1;A2,0.34772122;0.32082716,absent,,,
+Q1,A1;A2,3;2,A2;T1,0.68644559;0.58195281,A1;A2,true,false,Keyword retrieves A1 and A2: required coverage 2/2. Embeddings retrieve A2 and T1: partial coverage 1/2; the access-hours rule A1 ranks fourth (0.37424892).
+Q2,A2;B1,2;1,A2;T1,0.58519334;0.43476063,A2,true,true,"Both retrieve A2, the two-trained-person operating rule: required coverage 1/1. Extra passages add training or booking information, not evidence permitting solo use."
+Q3,T1;A2,2;1,T1;B1,0.74202740;0.47119522,T1,true,true,Both retrieve T1: required coverage 1/1. Embeddings match the qualification paraphrase to renewal at 0.74202740; keyword overlap on must and laser also succeeds.
+Q4,A2;B1,1;1,T1;A2,0.34772122;0.32082716,absent,false,false,"Answer evidence is absent from the entire corpus. Embeddings return T1 (0.34772122) and A2 (0.32082716), but neither gives a wavelength. Keyword laser matches also do not answer the question; no coverage ratio applies."
