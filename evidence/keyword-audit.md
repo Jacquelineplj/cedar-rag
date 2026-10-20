@@ -1,4 +1,10 @@
-# Keyword audit (Codex-generated; student should verify)
+# Keyword baseline audit
+
+## Prediction recorded before retrieval
+
+Before running retrieval: Q1 needs A1 for the access-hours condition and A2 for the two-person operating condition. A2 alone can establish that solo operation is not allowed, but does not provide the complete time and operating explanation requested in the audit.
+
+## Source and score checks
 
 Exactly six chunks are loaded, with the source ID and filename stored separately. Search uses only paragraph text. The original six source paragraphs are preserved in docs/.
 

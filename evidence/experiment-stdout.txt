@@ -1,2 +1,0 @@
-Saved actual embedding inspection, four comparisons, k experiment, and answer inputs.
-results-template.csv is blank for initial auditing; unchanged results retain completed judgments in results.csv.

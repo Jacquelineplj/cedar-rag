@@ -1,34 +1,48 @@
-# Q1 answer audit - Codex-generated; student verification required
+# Q1 answer and audit
 
-## Method
+The answer used the embedding result at k=2: A2 and T1. The exact question, original instruction and selected passages are in q1-answer-input.txt. The original and revised answers were generated in separate fresh conversations with only those inputs; no project files or other tools were used.
 
-Original answer: fresh projectless chat `01a15a34-c6fd-7d22-bba5-422bb659c763` (Cedar RAG Q1 answer). Revised answer: fresh projectless chat `01a15a35-3d08-7203-855a-1f5d0bba4cbe` (Cedar RAG Q1 revised answer). Only prompt, question, A2 and T1 were supplied. No project was attached. The recorded conversations show no file reads, browsing, or tool use by the answering chats. Original and revised answers and conversation records are preserved alongside this file. The revised prompt is preserved in the revised conversation JSON.
+## Original answer (verbatim)
 
-## Original result: incomplete
+No. The laser requires two trained people to be present whenever it operates, so a trained graduate student may not operate it alone at 19:00. [A2] The operator must also have a current training record, renewed every 12 months; the passages do not establish whether this student’s record is current. [T1]
 
-- Two trained people are required during operation: directly supported by A2. The conclusion against solo operation at 19:00 follows from "whenever" and does not need an access-hours assumption.
-- Training must be renewed every 12 months and a current record is required: directly supported by T1.
-- This student's training currency is not established: correctly identifies missing student-specific evidence. The final list awkwardly phrases "This student's training is current" as an unsupported claim even though the prose did not assert it.
-- Access hours: the answer did not say whether the selected evidence establishes access at 19:00. This fails the requested missing-evidence check. The retrieved set lacked A1; the answer should acknowledge that gap rather than leave the time condition unaddressed.
+Claim support:
+- Solo operation at 19:00 is prohibited: [A2].
+- Training renewal is required every 12 months, with a current record required before operation: [T1].
+- This student’s training record is current: unsupported by the supplied passages.
 
-## One revision and rerun
+## Audit of the original
 
-Added one instruction: address operation and access hours separately, explicitly check whether 19:00 is within permitted access hours, and distinguish missing information from asserted unsupported facts. Used exactly the same A2 and T1 passages in a new fresh chat; no A1 was added.
+The operating prohibition follows from A2's requirement for two trained people whenever the laser operates. T1 supports the 12-month renewal rule and current-record requirement. The response does not establish this student's actual training status.
 
-## Revised result: passes the selected-evidence audit
+The answer fails the requested access-hours check: it never acknowledges that the selected passages do not establish whether 19:00 is within permitted access hours. Its final unsupported-claim label is also awkward because the prose did not assert that the student's record was current.
 
-| Claim or statement | Support or missing evidence |
+## One instruction revision
+
+The same A2 and T1 passages were retained. This instruction was added once:
+
+> Address the operating condition and the time/access-hours condition separately. Explicitly state whether the supplied passages establish that 19:00 is within permitted access hours. Do not infer access hours from general references to them. In your claim list, distinguish a missing-evidence statement from an asserted unsupported fact.
+
+## Revised answer (verbatim)
+
+The student may **not operate the laser alone at 19:00**: two trained people must be present whenever the laser operates, including during general laboratory access hours. [A2] Operating also requires a current training record, with training renewed every 12 months; “trained” alone does not establish that the student’s record is current. [T1]
+
+Separately, **the passages do not establish whether 19:00 is within permitted access hours**. No access schedule is supplied.
+
+Claim–evidence list:
+
+- Two trained people must be present during laser operation, so operating alone is prohibited at 19:00. Supported: [A2].
+- Training must be renewed every 12 months, and operation requires a current training record. Supported: [T1].
+- The student’s current training status is not established. **Missing evidence:** no student-specific training record is supplied.
+- Whether 19:00 falls within permitted access hours is not established. **Missing evidence:** no permitted access hours are supplied.
+
+## Audit of the revision
+
+| Claim or statement | Evidence check |
 | --- | --- |
-| Solo operation violates the two-trained-person requirement | A2: two trained people whenever operating |
-| The rule also applies during general access hours | A2: explicitly includes those hours |
-| A current record is required; renewal every 12 months | T1: both requirements are stated |
-| The student's current record is not established | Missing student-specific record; no current status is asserted |
-| Whether 19:00 falls within permitted hours is not established | Neither supplied passage contains an access-hours schedule |
+| Two trained people must be present during operation; solo operation is prohibited | Supported by A2, including during general access hours |
+| Current training record required; renewal every 12 months | Supported by T1 |
+| This student's current record is not established | No student-specific record was supplied |
+| Access permission at 19:00 is not established | Neither selected passage contains an access-hours schedule |
 
-The revision helped by explicitly acknowledging the missing access-hours evidence. It did not repair retrieval: Q1's selected set still has coverage 1/2, because A1 is absent. No unsupported access schedule or invented citation appears in the revised answer.
-
-## Sequential final pass
-
-After setup, Task 1, Task 2, and Task 3 were rerun in order, Q1 was generated again in fresh projectless chat `01a15a3e-af33-7c32-a143-d616c20438b5`. Its exact initial prompt, unchanged A2/T1 evidence, and original answer are saved under `evidence/final-pass/`. This original again omitted the missing access-hours statement. It correctly supported the no-solo-operation and training claims, but did not fully pass the audit.
-
-One additional instruction was applied once, with exactly the same passages, in fresh chat `01a15a3f-52a7-7262-b51d-695284b6a774`. The final answer supports the operating prohibition with A2, current-record and 12-month renewal requirements with T1, and explicitly identifies both the missing student-specific current record and missing permitted access hours. Each claim was checked against the supplied text; the final answer introduces no numerical hours, wavelength, or unsupported permission. The revision passes the answer-grounding check while retrieval remains partial (A1 absent).
+The revision helped: it explicitly acknowledged missing hours evidence without inventing a schedule or citation. Retrieval coverage remains 1/2 because A1 was not selected. A supported operating prohibition does not make the retrieved time-and-operation explanation complete.

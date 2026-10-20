@@ -1,9 +1,0 @@
-{
-  "python": "3.12.8",
-  "platform": "macOS-26.6.2-arm64-arm-64bit",
-  "device": "cpu",
-  "model": "sentence-transformers/all-MiniLM-L6-v2",
-  "model_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
-  "borrowed_output": false,
-  "generation": "Answers generated in two fresh projectless Codex chats with only instruction, question and selected passages. See answer audit files."
-}

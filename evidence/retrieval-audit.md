@@ -1,6 +1,6 @@
-# Retrieval audit - Codex-generated, for student verification
+# Retrieval comparison and interpretation
 
-These observations use the actual local run. They do not fill the student judgment columns in results.csv.
+These observations explain the actual local runs and the completed judgments in results.csv.
 
 | Question | Keyword selected | Embedding selected | Required evidence coverage |
 | --- | --- | --- | --- |
