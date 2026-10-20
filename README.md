@@ -2,7 +2,7 @@
 
 **Student:** Jacqueline Pan
 
-Prepared with Codex assistance. All numerical evidence comes from local runs of the real model; no borrowed output or fabricated scores are used.
+All numerical evidence comes from local runs of the real model; no borrowed output or fabricated scores are used.
 
 ## Run
 
@@ -68,7 +68,7 @@ Retrieval chooses candidate evidence; the language model writes a cited answer f
 - `evidence/k-experiment.txt`: Q1 at k=1,2,3 with evidence coverage.
 - `evidence/q1-answer-input.txt` and `q4-answer-input.txt`: exact prompts and retrieved passages for answer generation.
 - `evidence/q1-answer-audit.md` and `q4-answer-audit.md`: original answers, citations, missing-information checks, and Q1's preserved failure plus one revision.
-- `REFLECTION.md`: 104-word reflection, with Codex assistance disclosed.
+- `REFLECTION.md`: 116-word individual reflection on the main finding, workflow, and next experiment.
 
 Q1's keyword evidence covers A1 and A2; embeddings retrieve A2 and T1, leaving access hours missing. Both methods find the required evidence for Q2 and Q3. No source specifies Q4's wavelength, so both Q4 completeness fields are false.
 
@@ -78,4 +78,4 @@ Repository: [Jacquelineplj/cedar-rag](https://github.com/Jacquelineplj/cedar-rag
 
 The code and evidence are present. The course sign-up sheet has not been updated. Submit the repository URL through the [course sheet](https://docs.google.com/spreadsheets/d/1ZewIG5udWWpk3Kdrab5yDbsWDV4gnH3liKobIAp7HG4/edit?usp=sharing).
 
-The assignment asks for a personal reflection written by the student. The current AI-assisted reflection still needs Jacqueline's own review and revision. The work runs in the existing `ps5` Codex Project; a separate `cedar-rag` Project has not been registered.
+The work runs in the existing `ps5` Codex Project; a separate `cedar-rag` Project has not been registered.

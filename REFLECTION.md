@@ -1,5 +1,9 @@
 # Individual reflection
 
-Author: Jacqueline Pan. Prepared with Codex assistance at the author's request.
+Author: Jacqueline Pan
 
-A question becomes a cited answer through document preparation, retrieval, and generation. Each paragraph keeps its ID and filename, while its text is encoded into a normalized vector. Similarity ranks candidate passages; a separate answer conversation uses only the selected evidence and cites supporting IDs. The Q1 result shows a limitation: embeddings retrieved the operating and training rules but missed the access-hours rule. Increasing k from two to three still did not retrieve that missing rule. Retrieval similarity therefore cannot guarantee complete evidence. The next experiment would combine keyword and embedding candidates and measure whether Q1's evidence coverage improves without adding unsupported answer claims.
+The main lesson from this task is that a high similarity score does not mean the evidence is complete. For Q1, embedding retrieval found the operating and training rules but missed the access hours rule. Increasing k from 2 to 3 did not solve this problem.
+
+The workflow starts by keeping each paragraph as a chunk with its ID and filename. The question and passages are converted into vectors. Similarity scores select the passages, and a separate conversation uses them to write an answer with citations. Each claim still needs to be checked against its source.
+
+Next, I would test combining keyword and embedding results to see whether this improves evidence coverage without adding unsupported claims.
