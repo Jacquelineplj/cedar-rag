@@ -1,0 +1,2 @@
+Saved actual embedding inspection, four comparisons, k experiment, and answer inputs.
+results.csv audit columns are intentionally blank for student judgment.

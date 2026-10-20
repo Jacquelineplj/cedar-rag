@@ -1,0 +1,106 @@
+{
+  "Q1": {
+    "question": "May a trained graduate student operate the laser alone at 19:00?",
+    "keyword": [
+      {
+        "id": "A1",
+        "score": 3
+      },
+      {
+        "id": "A2",
+        "score": 2
+      }
+    ],
+    "embedding": [
+      {
+        "id": "A2",
+        "score": 0.6864455938339233
+      },
+      {
+        "id": "T1",
+        "score": 0.5819528102874756
+      }
+    ]
+  },
+  "Q2": {
+    "question": "Can I use the laser without another person present?",
+    "keyword": [
+      {
+        "id": "A2",
+        "score": 2
+      },
+      {
+        "id": "B1",
+        "score": 1
+      }
+    ],
+    "embedding": [
+      {
+        "id": "A2",
+        "score": 0.5851933360099792
+      },
+      {
+        "id": "T1",
+        "score": 0.4347606301307678
+      }
+    ]
+  },
+  "Q3": {
+    "question": "How frequently must I refresh my laser qualification?",
+    "keyword": [
+      {
+        "id": "T1",
+        "score": 2
+      },
+      {
+        "id": "A2",
+        "score": 1
+      }
+    ],
+    "embedding": [
+      {
+        "id": "T1",
+        "score": 0.7420274019241333
+      },
+      {
+        "id": "B1",
+        "score": 0.4711952209472656
+      }
+    ]
+  },
+  "Q4": {
+    "question": "What is the laser wavelength?",
+    "keyword": [
+      {
+        "id": "A2",
+        "score": 1
+      },
+      {
+        "id": "B1",
+        "score": 1
+      }
+    ],
+    "embedding": [
+      {
+        "id": "T1",
+        "score": 0.3477212190628052
+      },
+      {
+        "id": "A2",
+        "score": 0.3208271563053131
+      }
+    ]
+  },
+  "Q1_k1": [
+    "A2"
+  ],
+  "Q1_k2": [
+    "A2",
+    "T1"
+  ],
+  "Q1_k3": [
+    "A2",
+    "T1",
+    "B1"
+  ]
+}

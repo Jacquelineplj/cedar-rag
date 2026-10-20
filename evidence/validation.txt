@@ -1,0 +1,13 @@
+Actual checks completed:
+- Python 3.12.8 local virtual environment created.
+- All six paragraph texts match the PDF after whitespace normalization.
+- Exactly six distinct expected IDs, with filenames retained separately.
+- Q1 keyword scores independently checked: A1=3, A2=2, B1=1, T1=1, T2=1, B2=0.
+- Tie order, exact stopwords, repeated query words, and zero-match behavior checked.
+- Model loaded and ran on CPU using real pretrained embeddings.
+- Document matrix (6,384), question vectors (384,).
+- Normalized vector lengths approximately 1; direct cosine and dot products agree within tolerance.
+- Four comparison rows and three Q1 k runs generated.
+- Fresh answer conversations used only selected passages and no tools.
+- Q1 original failure retained; one revised instruction rerun with same evidence.
+- Q4 abstention checked against supplied sources.

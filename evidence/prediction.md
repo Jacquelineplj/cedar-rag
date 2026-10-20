@@ -1,0 +1,1 @@
+Before running retrieval: Q1 needs A1 for the access-hours condition and A2 for the two-person operating condition. A2 alone can establish that solo operation is not allowed, but does not provide the complete time and operating explanation requested in the audit.
